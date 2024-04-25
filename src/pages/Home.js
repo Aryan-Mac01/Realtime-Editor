@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import { v4 as uuidV4 } from 'uuid'
+import toast from 'react-hot-toast'
 
 const Home = () => {
 
     const [roomId, setRoomId] = useState('');
+    const [username, setUserName] = useState('');
 
     const createNewRoom = (e) =>{
         e.preventDefault();
         const id = uuidV4();
         setRoomId(id);
+        toast.success('Create a new room')
     }
 
 
@@ -23,12 +26,15 @@ const Home = () => {
                     type="text" 
                     className="inputBox" 
                     placeholder="ROOM ID"
+                    onChange={(e) => setRoomId(e.target.value)}
                     value = {roomId}
                 />
                 <input 
                     type="text" 
                     className="inputBox" 
                     placeholder="USERNAME"
+                    onChange={(e) => setUserName(e.target.value)}
+                    value = {username}
                 />
             <button className="btn joinBtn">Join</button>
             <span className="createInfo">
