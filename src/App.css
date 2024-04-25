@@ -82,5 +82,6 @@ footer a{
 
 .createNewBtn:hover, footer a:hover{
   color: #368654;
+  cursor: pointer;
   border-color: #368654;
 }
