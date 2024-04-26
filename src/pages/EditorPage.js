@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Client from '../components/Client';
 
 const EditorPage = () => {
 
@@ -20,8 +21,13 @@ const EditorPage = () => {
                 </div>
                 <h3>Connected</h3>
                 <div className="clientsList">
-                    {
-                        //1:10
+                    {clients.map((client) => (
+
+                        <Client
+                            key = {client.socketId}
+                            username = {client.username}/>
+                    ))
+                        
                     }
                 </div>
             </div>
